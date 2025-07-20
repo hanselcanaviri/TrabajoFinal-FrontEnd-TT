@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol Vintage - Remeras Retro de Fútbol | Tienda Online</title>
+    <meta name="description" content="Tienda online de remeras vintage de fútbol. Encuentra las mejores réplicas de camisetas retro de fútbol.">
+    <meta name="keywords" content="fútbol, vintage, remeras, camisetas, retro, fútbol argentino">
+    <meta name="author" content="Tu Nombre">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <h1>Fútbol Vintage</h1>
+        <nav class="nav" role="navigation">
+            <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#reseñas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <a href="#carrito" id="cart-link" role="button" aria-label="Carrito de compras">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main" role="main">
+        <section id="inicio" class="hero" aria-labelledby="hero-heading">
+            <h2 id="hero-heading">Bienvenido a Fútbol Vintage</h2>
+            <p>Las mejores remeras retro de fútbol, con la calidad y autenticidad que mereces</p>
+            <div class="multimedia">
+                <img src="Images/remeras0.jpg" alt="Colección de remeras vintage de fútbol" loading="lazy">
+            </div>
+        </section>
+
+        <section id="productos" class="products" aria-labelledby="products-heading">
+            <h2 id="products-heading">Nuestros Productos</h2>
+            <div class="products-container" id="products-container">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <section id="reseñas" class="reviews" aria-labelledby="reviews-heading">
+            <h2 id="reviews-heading">Reseñas de Clientes</h2>
+            <div class="reviews-grid">
+                <div class="review-item">
+                    <h3>Juan Perez</h3>
+                    <p>Excelente servicio y productos de calidad.</p>
+                </div>
+                <div class="review-item">
+                    <h3>Marcelo Tinelli</h3>
+                    <p>Recomendado 100%.</p>
+                </div>
+                <div class="review-item">
+                    <h3>Lorenzo Batistuta</h3>
+                    <p>Buen precio y buena atención.</p>
+                </div>
+                 <div class="review-item">
+                    <h3>Erick Nam</h3>
+                    <p>Gracias Totales!!!.</p>
+                </div>
+                 <div class="review-item">
+                    <h3>Norberto Neri</h3>
+                    <p>Excelente producto, muy buenos materiales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contacto</h2>
+            <form class="contact-form" action="https://formspree.io/f/xdkznjdd" method="POST" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required placeholder="Complete el Nombre" aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="Complete el email" aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Modal del Carrito -->
+        <div id="cart-modal" class="modal" role="dialog" aria-labelledby="cart-modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close-modal" aria-label="Cerrar modal">&times;</span>
+                <h2 id="cart-modal-title">Tu Carrito</h2>
+                <div id="cart-items"></div>
+                <div id="cart-total">Total: $0</div>
+                <button id="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2025 Fútbol Vintage. Todos los derechos reservados.</p>
+        <p> Seguinos en nuestras redes sociales.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3284.006052544302!2d-58.38128517502903!3d-34.60400845889864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1748731537759!5m2!1ses!2sar" 
+        width="300" 
+        height="225" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de nuestra tienda">
+        </iframe>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
