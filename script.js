@@ -11,28 +11,70 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartLink = document.getElementById('cart-link');
     const contactForm = document.getElementById('contact-form');
 
-    // API de productos (simulada)
+    // API de productos
     const products = [
         {
             id: 1,
             name: "Remera Fulbo",
-            description: "Con un diseño exclusivo, esta remera es perfecta para quienes aman el deporte y buscan remeras de fútbol de calidad.",
             price: 15990,
+            description: "Con un diseño exclusivo, esta remera es perfecta para quienes aman el deporte y buscan remeras de fútbol de calidad.",
             image: "Images/remera1.jpg"
         },
         {
             id: 2,
             name: "Remera Argentina 90 negra",
-            description: "La remera Argentina 90 nace como inspiración de la casaca que usó Alemania para jugar la copa del mundo de la que, finalmente, salió campeón.",
             price: 16990,
+            description: "La remera Argentina 90 nace como inspiración de la casaca que usó Alemania para jugar la copa del mundo de la que, finalmente, salió campeón.",
             image: "Images/remera2.jpg"
         },
         {
             id: 3,
             name: "Remera GOYCO",
-            description: "Remera temática GOYCO. Uno de los diseños más emblemáticos del fútbol en el mundial de Italia 90´, comienza a tomar popularidad principalmente, gracias a dos figuras internacionales del arco: Sergio Goycochea",
             price: 17490,
+            description: "Remera temática GOYCO. Uno de los diseños más emblemáticos del fútbol en el mundial de Italia 90´, comienza a tomar popularidad principalmente, gracias a dos figuras internacionales del arco: Sergio Goycochea.",
             image: "Images/remera3.jpg"
+        },
+        {
+            id: 4,
+            name: "Remera GTA COPA",
+            price: 15490,
+            description: "Una fusión única de la cultura del fútbol argentino y el icónico estilo visual del videojuego GTA.",
+            image: "Images/remera4.jpg"
+        },
+        {
+            id: 5,
+            name: "Remera BIG BALL THEORY",
+            price: 19490,
+            description: "Basada en la famosa serie, es un homenaje a la evolución de las copas del mundo de Argentina y a la ciencia detrás de los balones que han marcado la historia del fútbol.",
+            image: "Images/remera5.jpg"
+        },
+        {
+            id: 6,
+            name: "Remera CAÑO DEL SIGLO",
+            price: 27490,
+            description: "Esta remera de Boca captura un momento icónico en la historia del fútbol argentino: EL CAÑO DEL SIGLO de Juan Román Riquelme a Yepes.",
+            image: "Images/remera6.jpg"
+        },
+        {
+            id: 7,
+            name: "Remera COPAS",
+            price: 37490,
+            description: "Una recopilación de los diferentes trofeos que obtuvo el máximo ganador de títulos de la historia del fútbol, Lionel Messi. Esta camiseta de Messi celebra su impresionante trayectoria.",
+            image: "Images/remera7.jpg"
+        },
+        {
+            id: 8,
+            name: "Remera ITALIA 90",
+            price: 18890,
+            description: "Rinde homenaje a uno de los mundiales más nostálgicos para todos los argentinos: el Mundial de Italia 90.",
+            image: "Images/remera8.jpg"
+        },
+        {
+            id: 9,
+            name: "Remera MIAMI",
+            price: 17490,
+            description: "La remera Miami Goat hace alusión a la camiseta del Inter de Miami de Estados Unidos, equipo de la MLS (Major League Soccer)",
+            image: "Images/remera9.jpg"
         }
     ];
 
@@ -46,15 +88,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
                 <div class="product-info">
                     <h3>${product.name}</h3>
-                    <p>${product.description}</p>
                     <div class="product-price">$${product.price.toLocaleString()}</div>
+                    <p>${product.description}</p>
                     <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
                 </div>
             `;
             productsContainer.appendChild(productCard);
         });
 
-        // Event listeners para botones "Agregar al carrito"
+        // Botones "Agregar al carrito"
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', addToCart);
         });
@@ -89,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
         cartCount.textContent = totalItems;
         
-        // Actualizar modal del carrito si está abierto
+        // Actualizar el carrito si está abierto
         if (cartModal.style.display === 'block') {
             renderCartItems();
         }
@@ -131,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         cartTotal.textContent = `Total: $${total.toLocaleString()}`;
         
-        // Event listeners para controles del carrito
+        // Listas para controles del carrito
         document.querySelectorAll('.decrease-quantity').forEach(button => {
             button.addEventListener('click', decreaseQuantity);
         });
